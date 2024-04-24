@@ -8,114 +8,85 @@
  * File:   PunterosGenericos.cpp
  * Author: cueva.r
  * 
- * Created on 10 de abril de 2024, 10:35 AM
+ * Created on 17 de abril de 2024, 10:20 AM
  */
-#include <iostream>
-#include <fstream>
 #include <cstring>
+#include <fstream>
+#include <iostream>
+
 #include "PunterosGenericos.h"
 
 using namespace std;
 
+void cargaproductos(void *&productos){
+    int i=0;
+    void *buff[200],**lproductos;
+    ifstream arch("productos2.csv",ios::in);
+    if(!arch){
+        cout <<"No se puede leer Productos";
+        exit(1);
+    }
+    while(1){
+        buff[i]=leeproductos(arch);
+        if(buff[i]==nullptr)break;        
+        i++;
+    }
+    lproductos=new void*[i+1];
+    for(int j=0;j<=i;j++)
+        lproductos[j]=buff[j];
+    productos=lproductos;    
+    miimprimeproductos(productos);
+}
 /*
-202123703,MEC270,202302,14
-202315643,MEC270,202202,13
+GBJ-693,Radio CD,314.2,S
+FQG-293,Rapiducha Premiun,2784.31,S
  */
-void cargacursos(int *alumnos_cod,void *&alumnoveces,const char*nom){
-    int codigo,ind;
-    ifstream arch(nom,ios::in);
+void *leeproductos(ifstream &arch){
+    char *codigo,*nombre,*tipo,c;
+    double *precio;
+    void **registro;
+    
+    codigo=leecadena(arch,10,',');
+    if(arch.eof()) return nullptr;
+    nombre = leecadena(arch,100,',');
+    precio = new double;
+    tipo = new char;
+    arch >> *precio >> c >>*tipo;
+    arch.get();
+    
+    registro = new void*[4];
+    registro[0] = codigo;
+    registro[1] = nombre;
+    registro[2] = precio;
+    registro[3] = tipo;
+    
+    return registro;
+}
+void miimprimeproductos(void *productos){
+    void **lprod=(void**)productos;
+    ofstream arch("reportes.txt",ios::out);
     if(!arch){
         cout <<"No se puede abrir";
         exit(1);
-    }
-    inicializa(alumnos_cod,alumnoveces);
-    void **lveces = (void**)alumnoveces;
-    while(1){
-        arch >> codigo;
-        if(arch.eof())break;
-        arch.get();
-        ind = busca(codigo,alumnos_cod);
-        if(ind!=-1)
-            leematricula(arch,lveces[ind]);
-    }
-    
-    
-}
-/*
-202123703,MEC270,202302,14
-202315643,MEC270,202202,13
- */
-
-void leematricula(ifstream &arch,void *lveces){
-    char *codclave,c;
-    int *ciclo,*nota,*numcur;
-    void **lalumno=(void**)lveces;
-    void **lcurso;
-    codclave=leecadena(arch,10,',');
-    ciclo = new int;
-    nota = new int;//errores de concepto usuales
-    arch >> *ciclo >> c >> *nota;
-    numcur = (int*)lalumno[1]; //terrible error de concepto
-    if(*numcur==0){
-        lcurso = new void*[100];
-        lalumno[6] = lcurso;
-    }
-    cargavez(*numcur,codclave,ciclo,nota,lalumno[6]);    
-   *numcur = *numcur + 1;
-}
-void cargavez(int numcur,char*codclave,int *ciclo,
-        int *nota,void *curso){
-    void **lcurso=(void**)curso;
-    void **reg;
-    
-    reg = new void*[3];
-    reg[0] = codclave;
-    reg[1] = ciclo;
-    reg[2] = nota;
-    lcurso[numcur] = reg;    
+    }    
+    for(int i=0;lprod[i]!=nullptr;i++){
+        imprimeregistro(arch,lprod[i]);
+    }    
+        
 }
 
-int busca(int codigo, int *alumnos){
-    for(int i=0;alumnos[i]!=-1 ;i++)
-        if(alumnos[i]==codigo)
-            return i;
-    return -1;
-}
-
-
-void inicializa(int *alumnos_cod,void *&alumnoveces){
-    void *buffer[100],**lveces;
-    int i;
-    for(i=0;alumnos_cod[i]!=-1;i++)
-        buffer[i] = crearegistro(alumnos_cod[i]);
-    buffer[i] = nullptr;
-    lveces = new void*[i+1];
-    for(int j=0;j<=i;j++)
-        lveces[j] = buffer[j];
+void imprimeregistro(ofstream &arch,void*prod){
+    char *codigo,*nombre,*tipo,c;
+    double *precio;
+    void **registro = (void**)prod;
     
-    alumnoveces = lveces;
-}
-void * crearegistro(int codigo){
-    void **reg;
-    int *cod,*numcur,*numaprob,*numprim,*numseg,*numter;
-    reg = new void*[7];
-    cod = new int;
-    numcur = new int;
-    numaprob = new int;
-    numprim = new int;
-    numseg = new int;
-    numter = new int;
-    *cod=codigo; *numcur=0; *numaprob=0;
-    *numprim=0; *numseg=0; *numter=0;
-    reg[0] = cod;
-    reg[1] = numcur;
-    reg[2] = numaprob;
-    reg[3] = numprim;
-    reg[4] = numseg;
-    reg[5] = numter;
-    reg[6] = nullptr;  
+    codigo = (char*)registro[0];
+    nombre = (char*)registro[1];
+    precio = (double*)registro[2];
+    tipo = (char*)registro[3];
+ 
+    arch << codigo<<" " << nombre<<" " << *precio <<" " << *tipo << endl;
     
-    return reg;
 }
 
 char *leecadena(ifstream &arch,int max,char deli){
