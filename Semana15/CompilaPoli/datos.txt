@@ -1,0 +1,18 @@
+1 20
+2 10
+3 15
+4 10
+5 15
+0
+R 2022 1 Historica 1.5
+E 2015 ENCICLOPEDIA_SALVAT 15
+N Jose_Maria_Arguedas Diamantes_y_pedernales 4
+N Gabriel_Garcia_Marquez El_otonio_del_patriarca 5
+R 2021 2 Historica 1.5
+N Hernest_Hemingway El_viejo_y_el_mar 4.5
+E 2014 LA_ENCICLOPEDIA_DE_LOS_BARCOS 12
+E 2018 LA_ENCICLOPEDIA_DE_LOS_DINOSAURIOS 10
+R 2023 3 Boletin_de_Arqueologia_PUCP 1.0
+R 2022 1 Boletin_de_Arqueologia_PUCP 1.5
+N Yukio_Mishima Confesiones_de_una_mascara 5.5
+R 2021 4 Historica 1.5

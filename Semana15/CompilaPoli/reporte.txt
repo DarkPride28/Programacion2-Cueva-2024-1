@@ -1,0 +1,73 @@
+Id: 1
+Capacidad: 20.0
+Disponible: 1.0
+Nombre: Historica
+Peso: 1.5
+Año: 2022
+Numero: 1
+
+Nombre: ENCICLOPEDIA_SALVAT
+Peso: 15.0
+Año: 2015
+
+Nombre: Historica
+Peso: 1.5
+Año: 2021
+Numero: 2
+
+Nombre: Boletin_de_Arqueologia_PUCP
+Peso: 1.0
+Año: 2023
+Numero: 3
+
+ 
+Id: 2
+Capacidad: 10.0
+Disponible: 1.0
+Nombre: Diamantes_y_pedernales
+Peso: 4.0
+Autor: Jose_Maria_Arguedas
+
+Nombre: El_otonio_del_patriarca
+Peso: 5.0
+Autor: Gabriel_Garcia_Marquez
+
+ 
+Id: 3
+Capacidad: 15.0
+Disponible: 0.5
+Nombre: El_viejo_y_el_mar
+Peso: 4.5
+Autor: Hernest_Hemingway
+
+Nombre: LA_ENCICLOPEDIA_DE_LOS_DINOSAURIOS
+Peso: 10.0
+Año: 2018
+
+ 
+Id: 4
+Capacidad: 10.0
+Disponible: 1.5
+Nombre: Boletin_de_Arqueologia_PUCP
+Peso: 1.5
+Año: 2022
+Numero: 1
+
+Nombre: Confesiones_de_una_mascara
+Peso: 5.5
+Autor: Yukio_Mishima
+
+Nombre: Historica
+Peso: 1.5
+Año: 2021
+Numero: 4
+
+ 
+Id: 5
+Capacidad: 15.0
+Disponible: 3.0
+Nombre: LA_ENCICLOPEDIA_DE_LOS_BARCOS
+Peso: 12.0
+Año: 2014
+
+ 

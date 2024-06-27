@@ -1,0 +1,32 @@
+Id: 1
+Capacidad: 20.0
+Disponible: 5.0
+Codigo: IIM5175
+Nombre: Diamantes_y_pedernales
+Peso: 10.0
+Codigo: YDK7687
+Nombre: El_otonio_del_patriarca
+Peso: 5.0
+ 
+Id: 2
+Capacidad: 10.0
+Disponible: 4.5
+Codigo: ETZ8565
+Nombre: Confesiones_de_una_mascara
+Peso: 5.5
+ 
+Id: 3
+Capacidad: 15.0
+Disponible: 4.5
+Codigo: ZOY6470
+Nombre: El_viejo_y_el_mar
+Peso: 10.5
+ 
+Id: 4
+Capacidad: 10.0
+Disponible: 10.0
+ 
+Id: 5
+Capacidad: 15.0
+Disponible: 15.0
+ 

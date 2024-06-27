@@ -1,0 +1,10 @@
+1 20
+2 10
+3 15
+4 10
+5 15
+0
+IIM5175 Diamantes_y_pedernales 10
+YDK7687 El_otonio_del_patriarca 5
+ZOY6470 El_viejo_y_el_mar 10.5
+ETZ8565 Confesiones_de_una_mascara 5.5
