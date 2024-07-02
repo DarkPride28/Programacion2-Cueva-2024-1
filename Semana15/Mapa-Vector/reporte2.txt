@@ -1,0 +1,49 @@
+
+
+Id: 1
+Tipo: Horizontal
+Capacidad: 20
+Libros Contenidos:
+==================
+Titulo:Boletin de Arqueologia PUCP
+Peso: 3.25
+Titulo:Boletin de Arqueologia PUCP
+Peso: 1.25
+Titulo:Boletin de Arqueologia PUCP
+Peso: 5.25
+Titulo:Boletin de Arqueologia PUCP
+Peso: 10.25
+
+
+Id: 2
+Tipo: Vertical
+Capacidad: 10
+Libros Contenidos:
+==================
+Titulo:Boletin de Arqueologia PUCP
+Peso: 5.25
+Titulo:Boletin de Arqueologia PUCP
+Peso: 4.18
+
+
+Id: 3
+Tipo: Horizontal
+Capacidad: 15
+Libros Contenidos:
+==================
+Titulo:Boletin de Arqueologia PUCP
+Peso: 8.25
+Titulo:Boletin de Arqueologia PUCP
+Peso: 5.25
+Titulo:Revista de Psicologia
+Peso: 1.2
+
+
+Id: 4
+Tipo: Horizontal
+Capacidad: 10
+Libros Contenidos:
+==================
+Titulo:Boletin de Arqueologia PUCP
+Peso: 9.25
+4
